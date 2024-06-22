@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -7,6 +8,7 @@ using System.Threading.Tasks;
 using Microsoft.Build.Framework;
 using NetcodePatcher.Tools.Common;
 using Serilog;
+using Serilog.Sinks.MSBuild.Themes;
 using Task = Microsoft.Build.Utilities.Task;
 
 namespace NetcodePatcher.MSBuild;
@@ -35,7 +37,7 @@ public class NetcodePatchTask : Task
     {
         Serilog.Log.Logger = new LoggerConfiguration()
             .MinimumLevel.Debug()
-            .WriteTo.MSBuildTask(this)
+            .WriteTo.MSBuildTask(this, theme: MSBuildConsoleTheme.None)
             .CreateLogger();
 
         var toolVersion = typeof(NetcodePatchTask).Assembly
