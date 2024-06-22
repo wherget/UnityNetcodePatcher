@@ -5,10 +5,25 @@ namespace NetcodePatcher.Tools.Common;
 
 public record PatcherConfiguration
 {
+#if NETFRAMEWORK || NETSTANDARD
+    /* can't guarantee "required", "init" of those in netstandard */
+    public Version UnityVersion { get; set; }
+    public Version NetcodeVersion { get; set; }
+    public Version TransportVersion { get; set; }
+    public bool NativeCollectionSupport { get; set; }
+
+    public PatcherConfiguration() {
+        UnityVersion = Version.Parse("2022.3.9");
+        NetcodeVersion = Version.Parse("1.5.2");
+        TransportVersion = Version.Parse("1.0.0");
+        NativeCollectionSupport = false;
+    }
+#else
     public required Version UnityVersion { get; init; }
     public required Version NetcodeVersion { get; init; }
     public required Version TransportVersion { get; init; }
     public required bool NativeCollectionSupport { get; init; }
+#endif
 
     private readonly Lazy<string> _executingDir = new(
         () => Path.GetFullPath(Path.GetDirectoryName(typeof(PatcherConfiguration).Assembly.Location)!)
