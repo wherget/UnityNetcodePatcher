@@ -17,7 +17,8 @@
     <PackageReference Include="Microsoft.Build.Utilities.Core" Version="17.*"/>
     <PackageReference Include="Serilog" Version="3.1.1"/>
     <Reference Include="Serilog.Sinks.MSBuild">
-      <HintPath>$(ProjectDir)../libs/serilog-sinks-msbuild/Serilog.Sinks.MSBuild.dll</HintPath>
+      <HintPath Condition=" '$(TargetFramework)' == 'net8.0' ">$(ProjectDir)../libs/serilog-sinks-msbuild/net8.0/Serilog.Sinks.MSBuild.dll</HintPath>
+      <HintPath Condition=" '$(TargetFramework)' != 'net8.0' ">$(ProjectDir)../libs/serilog-sinks-msbuild/net472/Serilog.Sinks.MSBuild.dll</HintPath>
     </Reference>
   </ItemGroup>
 
