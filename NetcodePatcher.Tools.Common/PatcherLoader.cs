@@ -55,7 +55,7 @@ public class PatcherLoader
     private static Assembly LoadPatcherAssemblyUnsafe(PatcherConfiguration configuration)
     {
         Log.Debug("Loading patcher from {PatcherLocation}",  configuration.PatcherAssemblyFile);
-        PatcherLoadContext patcherLoadContext = new PatcherLoadContext("PatcherLoadContext", configuration);
+        PatcherLoadContext patcherLoadContext = new PatcherLoadContext("PatcherLoadContext", new AssemblyResolver(configuration));
 
         Assembly patcherAssembly;
         try {
