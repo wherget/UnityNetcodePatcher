@@ -161,7 +161,7 @@ and create a `.csproj.user` file to tell the `NetcodePatcher` plugin where Unity
 <?xml version="1.0" encoding="utf-8"?>
 <Project>
   <PropertyGroup>
-    <UnityEditorDir>$(ProgramFiles)/Unity/Hub/Editor/2022.3.9f1/Editor</UnityEditorDir>
+    <UnityEditorDir>$(ProgramFiles)/Unity/Hub/Editor/2022.3.9f1/Editor/Data</UnityEditorDir>
   </PropertyGroup>
 </Project>
 ```

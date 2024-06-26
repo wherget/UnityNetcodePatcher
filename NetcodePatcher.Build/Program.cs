@@ -51,6 +51,7 @@ public class BuildContext : FrostingContext
         .Combine(UnityNetcodeNativeCollectionSupport ? "with-native-collection-support" : "without-native-collection-support");
 
     public DirectoryPath? UnityEditorDir { get; }
+    public DirectoryPath? UnityDataDir => UnityEditorDir?.Combine("Data");
 
     public BuildContext(ICakeContext context)
         : base(context)
@@ -168,7 +169,7 @@ public sealed class CompilePatcherTask : FrostingTask<BuildContext>
         if (context.UnityEditorDir is not null)
         {
             buildSettings.MSBuildSettings = buildSettings.MSBuildSettings
-                .WithProperty("UnityEditorDir", context.UnityEditorDir.FullPath);
+                .WithProperty("UnityEditorDir", context.UnityDataDir.FullPath);
         }
 
         context.DotNetPublish(context.PatcherProjectFile.FullPath, buildSettings);

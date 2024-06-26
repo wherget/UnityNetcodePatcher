@@ -38,19 +38,19 @@
     </Reference>
     <Reference Include="UnityEditor" PrivateAssets="All">
       <!-- only needed for compile-time InitializeOnLoadMethod marker -->
-      <HintPath>$(UnityEditorDir)/Data/Managed/UnityEditor.dll</HintPath>
+      <HintPath>$(UnityEditorDir)/Managed/UnityEditor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine">
-      <HintPath>$(UnityEditorDir)/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
+      <HintPath>$(UnityEditorDir)/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>$(UnityEditorDir)/Data/Managed/UnityEngine/UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>$(UnityEditorDir)/Managed/UnityEngine/UnityEngine.CoreModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.IMGUIModule">
-      <HintPath>$(UnityEditorDir)/Data/Managed/UnityEngine/UnityEngine.IMGUIModule.dll</HintPath>
+      <HintPath>$(UnityEditorDir)/Managed/UnityEngine/UnityEngine.IMGUIModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TextRenderingModule">
-      <HintPath>$(UnityEditorDir)/Data/Managed/UnityEngine/UnityEngine.TextRenderingModule.dll</HintPath>
+      <HintPath>$(UnityEditorDir)/Managed/UnityEngine/UnityEngine.TextRenderingModule.dll</HintPath>
     </Reference>
   </ItemGroup>
 
